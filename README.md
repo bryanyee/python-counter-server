@@ -1,5 +1,5 @@
 ### Python Counter Server
 
 ```
-python3 app/server.py
+python3 server.py
 ```

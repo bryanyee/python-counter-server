@@ -7,7 +7,7 @@ class CounterServer(BaseHTTPRequestHandler):
         global counter
 
         if self.path == '/':
-            with open('index.html', 'rb') as fh:
+            with open('assets/index.html', 'rb') as fh:
                 self.send_response(200)
                 self.send_header('Content-type', 'text/html')
                 self.end_headers()
