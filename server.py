@@ -27,14 +27,16 @@ class CounterServer(BaseHTTPRequestHandler):
         global counter
         if self.path == '/add':
             counter += 1
-            self.send_response(204)
+            self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
+            self.wfile.write(str(counter).encode(encoding='utf_8'))
         elif self.path == '/subtract':
             counter -= 1
-            self.send_response(204)
+            self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
+            self.wfile.write(str(counter).encode(encoding='utf_8'))
         else:
             self.send_response(404)
             self.send_header('Content-Type', 'application/json')
